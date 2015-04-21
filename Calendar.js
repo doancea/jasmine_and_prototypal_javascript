@@ -1,6 +1,9 @@
-function Calendar() {
+function Calendar(minimumDate) {
 	
-	var minimumDate = new Date();
+	if(minimumDate === undefined) {
+	 	minimumDate = new Date();
+	 }
+	 
 	var maximumDate = calculateMaxDate();
 
 	this.minDate = function() {

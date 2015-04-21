@@ -33,6 +33,8 @@ describe("Calendar", function() {
   it("should have a maximum date 60 days from the current date", function() {
       var minDate = new Date("2015-04-24");
       var expectedMaxDate = new Date();
+      var calendar = new Calendar(minDate);
+      
       expectedMaxDate.setDate(minDate.getDate() + 60);
 
       calendar.setMinimumDate(minDate);
