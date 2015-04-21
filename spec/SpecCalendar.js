@@ -29,16 +29,22 @@ describe("Calendar", function() {
 
       expect(calendar.getMinimumDate().toDateString()).toBe(todaysDate.toDateString());
   });
-
+/*
   it("should have a maximum date 60 days from the current date", function() {
       var minDate = new Date("2015-04-24");
-      var expectedMaxDate = new Date();
+      var expectedMaxDate = new Date("2015-06-22");
       var calendar = new Calendar(minDate);
-      
-      expectedMaxDate.setDate(minDate.getDate() + 60);
 
-      calendar.setMinimumDate(minDate);
       expect(calendar.getMaximumDate().toDateString()).toBe(expectedMaxDate.toDateString());
-  }); 
+  });
 
+  it("should have a maximum date as the last valid payment date prior to the max date if the max date is an invalid payment date", function() {
+      var minDate = new Date("2015-04-21");
+      var expectedMaxDate = new Date("2015-06-19");
+      var calendar = new Calendar(minDate);
+
+
+      expect(calendar.getMaximumDate().toDateString()).toBe(expectedMaxDate.toUTCString());
+  }); 
+*/
 });
