@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<input id="calendar" type="date" onchange="validateSelectedDate();"/>
+
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="Calendar.js"></script>
+		<script type="text/javascript" src="DateFormatter.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+				var calendar = new Calendar();
+				var formatter = new DateFormatter();
+
+				$("#calendar").attr("min", formatter.toCalendarAttrString(calendar.getMinimumDate()));
+				$("#calendar").attr("max", formatter.toCalendarAttrString(calendar.getMaximumDate()));
+			})
+		</script>
+	</body>
+</html>
